@@ -1,13 +1,16 @@
+"use client";
+
 import React from "react";
 import { Title } from "./title";
 import { ProductCard } from "./product-card";
+import { useIntersection } from "react-use";
 
 interface Props {
   title: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   items: any[];
   className?: string;
-  // categoryId?: number;
+  categoryId?: number;
   // listClassName?: string;
 }
 
@@ -15,11 +18,26 @@ export const ProductsGroupList: React.FC<Props> = ({
   title,
   items,
   className,
-  // categoryId,
+  categoryId,
   // listClassName,
 }) => {
+  const intersectionRef = React.useRef<HTMLDivElement | null>(null);
+
+  const intersection = useIntersection(
+    intersectionRef as React.RefObject<HTMLDivElement>,
+    {
+      threshold: 0.4,
+    }
+  );
+
+  React.useEffect(() => {
+    if (intersection?.isIntersecting) {
+      console.log(title, categoryId);
+    }
+  }, [categoryId, intersection, title]);
+
   return (
-    <div className={className}>
+    <div className={className} id={title} ref={intersectionRef}>
       <Title text={title} size="lg" className="font-extrabold mb-5" />
       <div className="grid grid-cols-3 gap-[50px]">
         {items.map((product) => (
