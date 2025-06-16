@@ -4,13 +4,14 @@ import React from "react";
 import { Title } from "./title";
 import { ProductCard } from "./product-card";
 import { useIntersection } from "react-use";
+import { useCategoryStore } from "@/store/category";
 
 interface Props {
   title: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   items: any[];
   className?: string;
-  categoryId?: number;
+  categoryId: number;
   // listClassName?: string;
 }
 
@@ -21,6 +22,7 @@ export const ProductsGroupList: React.FC<Props> = ({
   categoryId,
   // listClassName,
 }) => {
+  const setActineCategoryId = useCategoryStore((state) => state.setActiveId);
   const intersectionRef = React.useRef<HTMLDivElement | null>(null);
 
   const intersection = useIntersection(
@@ -32,9 +34,9 @@ export const ProductsGroupList: React.FC<Props> = ({
 
   React.useEffect(() => {
     if (intersection?.isIntersecting) {
-      console.log(title, categoryId);
+      setActineCategoryId(categoryId);
     }
-  }, [categoryId, intersection, title]);
+  }, [categoryId, intersection?.isIntersecting, setActineCategoryId, title]);
 
   return (
     <div className={className} id={title} ref={intersectionRef}>
