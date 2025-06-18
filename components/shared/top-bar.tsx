@@ -1,8 +1,10 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Categories } from "./categories";
-import { SortPopup } from "./sort-popup";
+import { SortSelector } from "./sort-selector";
 import { Container } from "./container";
+import { Cart } from "./cart";
+import { SortFilterTrigger } from "./sort-filter-trigger";
 
 interface Props {
   className?: string;
@@ -16,9 +18,15 @@ export const TopBar: React.FC<Props> = ({ className }) => {
         className
       )}
     >
-      <Container className="flex items-center justify-between">
+      <Container className="flex items-center justify-between gap-4">
         <Categories />
-        <SortPopup />
+
+        <div className="flex items-center gap-4">
+          <SortSelector className="hidden lg:inline-flex" />
+          <SortFilterTrigger className="lg:hidden" />
+
+          <Cart />
+        </div>
       </Container>
     </div>
   );

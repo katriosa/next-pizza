@@ -17,7 +17,7 @@ export default function Home() {
       <Container className="mt-10 pb-14">
         <div className="flex gap-[60px]">
           {/* Filters */}
-          <div className="w-[250px]">
+          <div className="w-[250px] hidden lg:block">
             <Filters />
           </div>
 
@@ -68,6 +68,129 @@ export default function Home() {
               <ProductsGroupList
                 title="Combos"
                 categoryId={2}
+                items={[
+                  {
+                    id: 1,
+                    name: "Pepperoni",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 9.99 }],
+                  },
+                  {
+                    id: 2,
+                    name: "Carbonara",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 3.5 }],
+                  },
+                  {
+                    id: 3,
+                    name: "Pesto",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 4 }],
+                  },
+                  {
+                    id: 4,
+                    name: "Pepperoni",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 9.99 }],
+                  },
+                  {
+                    id: 5,
+                    name: "Carbonara",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 3.5 }],
+                  },
+                ]}
+              />
+              <ProductsGroupList
+                title="Snacks"
+                categoryId={3}
+                items={[
+                  {
+                    id: 1,
+                    name: "Pepperoni",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 9.99 }],
+                  },
+                  {
+                    id: 2,
+                    name: "Carbonara",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 3.5 }],
+                  },
+                  {
+                    id: 3,
+                    name: "Pesto",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 4 }],
+                  },
+                  {
+                    id: 4,
+                    name: "Pepperoni",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 9.99 }],
+                  },
+                  {
+                    id: 5,
+                    name: "Carbonara",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 3.5 }],
+                  },
+                ]}
+              />
+              <ProductsGroupList
+                title="Cocktails"
+                categoryId={4}
+                items={[
+                  {
+                    id: 1,
+                    name: "Pepperoni",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 9.99 }],
+                  },
+                  {
+                    id: 2,
+                    name: "Carbonara",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 3.5 }],
+                  },
+                  {
+                    id: 3,
+                    name: "Pesto",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 4 }],
+                  },
+                  {
+                    id: 4,
+                    name: "Pepperoni",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 9.99 }],
+                  },
+                  {
+                    id: 5,
+                    name: "Carbonara",
+                    imageUrl:
+                      "https://media.dodostatic.com/image/r:584x584/11eef6779b74fd6c89f36f97f6eb27ca.avif",
+                    items: [{ price: 3.5 }],
+                  },
+                ]}
+              />
+              <ProductsGroupList
+                title="Drinks"
+                categoryId={5}
                 items={[
                   {
                     id: 1,
